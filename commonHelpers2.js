@@ -1,2 +1,2 @@
-import"./assets/styles-3c4e11fa.js";console.log("Form");
+import"./assets/styles-6800e591.js";const e=document.querySelector(".feedback-form"),a=e.elements.email,o=e.elements.message,l="feedback-form-email",m="feedback-form-message";a.value=localStorage.getItem(l)??"";o.value=localStorage.getItem(m)??"";e.addEventListener("input",t=>{t.target===a?localStorage.setItem(l,a.value):t.target===o&&localStorage.setItem(m,o.value)});e.addEventListener("submit",t=>{t.preventDefault(),e.reset(),localStorage.removeItem(l),localStorage.removeItem(m)});console.log("Email:",a.value);console.log("Message:",o.value);
 //# sourceMappingURL=commonHelpers2.js.map

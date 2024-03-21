@@ -7,20 +7,22 @@ const messageLocalStorageKey = "feedback-form-message";
 emailInput.value = localStorage.getItem(emailLocalStorageKey) ?? "";
 messageInput.value = localStorage.getItem(messageLocalStorageKey) ?? "";
 
-form.addEventListener("input", (evt) => {
-  if (evt.target === emailInput) {
+form.addEventListener("input", handleInput);
+form.addEventListener("submit", handleSubmit);
+
+function handleInput(event) {
+  if (event.target === emailInput) {
     localStorage.setItem(emailLocalStorageKey, emailInput.value);
-  } else if (evt.target === messageInput) {
+  } else if (event.target === messageInput) {
     localStorage.setItem(messageLocalStorageKey, messageInput.value);
   }
-});
+  console.log("Email:", emailInput.value);
+};
 
-form.addEventListener("submit", (evt) => {
-  evt.preventDefault();
+function handleSubmit(event) {
+  event.preventDefault();
   form.reset();
   localStorage.removeItem(emailLocalStorageKey);
   localStorage.removeItem(messageLocalStorageKey);
-});
-
-console.log("Email:", emailInput.value);
-console.log("Message:", messageInput.value);
+  console.log("Message:", messageInput.value);
+};

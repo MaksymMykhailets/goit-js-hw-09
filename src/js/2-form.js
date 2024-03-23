@@ -21,8 +21,7 @@ function handleInput(event) {
   }
   
   if (infoInput.email.trim() !== "" && infoInput.message.trim() !== "") {
-    console.log("Email:", infoInput.email);
-    console.log("Message:", infoInput.message);
+    console.log(infoInput);
   }
 }
 
@@ -36,5 +35,7 @@ function handleSubmit(event) {
   form.reset();
   localStorage.removeItem(localStorageKey);
   
-  console.log(infoSubmit);
+  if (infoSubmit.email.trim() !== "" && infoSubmit.message.trim() !== "") {
+    console.log(infoSubmit);
+  }
 }

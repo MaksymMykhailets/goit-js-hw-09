@@ -20,8 +20,10 @@ function handleInput(event) {
     localStorage.setItem(localStorageKey, JSON.stringify(infoInput));
   }
   
-  console.log("Email:", infoInput.email);
-  console.log("Message:", infoInput.message);
+  if (infoInput.email.trim() !== "" && infoInput.message.trim() !== "") {
+    console.log("Email:", infoInput.email);
+    console.log("Message:", infoInput.message);
+  }
 }
 
 function handleSubmit(event) {
